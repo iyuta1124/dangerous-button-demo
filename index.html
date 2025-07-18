@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>🏢 本番環境管理画面</h1>
+      <h1>本番環境管理画面</h1>
 
       <div class="warning">
         ⚠️ これはデモページです。実際の操作は実行されません。
@@ -21,7 +21,6 @@
       </div>
 
       <div class="code-section">
-        <h3>📝 Tampermonkey防止スクリプト</h3>
         <p>以下のスクリプトで上のボタンを消すことができます：</p>
 
         <div style="position: relative">
@@ -31,18 +30,9 @@
           >
             コピー
           </button>
-          <!-- prettier-ignore-start -->
           <div class="code" style="overflow-x: auto">
-            // ==UserScript== // @name 本番破壊防止 // @match * // @grant none
-            // ==/UserScript== (function() { 'use strict'; //
-            危険なボタンを探して隠す
-            document.querySelectorAll('button').forEach(button => { const text =
-            button.textContent || ''; if (text.includes('破壊') ||
-            text.includes('削除') || button.classList.contains('btn-danger')) {
-            button.style.display = 'none';
-            console.log('危険なボタンを隠しました:', text); } }); })();
+            <!-- ここにtamper-monkey.jsの内容が動的に読み込まれます -->
           </div>
-          <!-- prettier-ignore-end -->
         </div>
 
         <div class="usage">
