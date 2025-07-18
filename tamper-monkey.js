@@ -1,11 +1,7 @@
 // ==UserScript==
 // @name         本番環境破壊ボタン制御スクリプト
-// @namespace    http://tampermonkey.net/
-// @version      2025-07-18
 // @description  本番環境破壊なボタンの表示/非表示を制御します
-// @author       You
 // @match        https://iyuta1124.github.io/dangerous-button-demo/
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=github.io
 // @grant        none
 // ==/UserScript==
 
