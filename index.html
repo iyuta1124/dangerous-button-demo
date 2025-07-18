@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>本番環境管理画面</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🏢 本番環境管理画面</h1>
+
+      <div class="warning">
+        ⚠️ これはデモページです。実際の操作は実行されません。
+      </div>
+
+      <div class="button-area">
+        <button class="btn-danger destroy-button" onclick="handleDestroy()">
+          🔥 本番環境を破壊する 🔥
+        </button>
+      </div>
+
+      <div class="code-section">
+        <h3>📝 Tampermonkey防止スクリプト</h3>
+        <p>以下のスクリプトで上のボタンを消すことができます：</p>
+
+        <div style="position: relative">
+          <button
+            onclick="copyCode(this)"
+            style="position: absolute; top: 4px; right: 4px; z-index: 1"
+          >
+            コピー
+          </button>
+          <!-- prettier-ignore-start -->
+          <div class="code" style="overflow-x: auto">
+            // ==UserScript== // @name 本番破壊防止 // @match * // @grant none
+            // ==/UserScript== (function() { 'use strict'; //
+            危険なボタンを探して隠す
+            document.querySelectorAll('button').forEach(button => { const text =
+            button.textContent || ''; if (text.includes('破壊') ||
+            text.includes('削除') || button.classList.contains('btn-danger')) {
+            button.style.display = 'none';
+            console.log('危険なボタンを隠しました:', text); } }); })();
+          </div>
+          <!-- prettier-ignore-end -->
+        </div>
+
+        <div class="usage">
+          <strong>使い方：</strong><br />
+          1. Tampermonkey拡張機能をインストール<br />
+          2. 上記コードを新しいスクリプトとして登録<br />
+          3. このページをリロードして確認
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
